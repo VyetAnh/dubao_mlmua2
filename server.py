@@ -263,10 +263,11 @@ def trigger():
         return jsonify({"error": str(e)}), 500
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Entry point
+# Khởi động polling khi module load (gunicorn không chạy __main__)
 # ─────────────────────────────────────────────────────────────────────────────
+start_polling()
+
 if __name__ == "__main__":
-    start_polling()
     port = int(os.environ.get("PORT", 5000))
     log.info(f"Flask on port {port}")
     app.run(host="0.0.0.0", port=port, debug=False)
