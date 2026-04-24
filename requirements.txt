@@ -5,4 +5,3 @@ firebase-admin
 scikit-learn
 numpy
 joblib
-pandas
